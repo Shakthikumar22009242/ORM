@@ -20,32 +20,31 @@ Enter the code for admin.py and models.py
 Execute Django admin and create 10 Football players
 
 ## PROGRAM 
-```python
 Admin.py
+```python
 from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+from .models import football,footballAdmin
+admin.site.register(football,footballAdmin)
+```
 
 Models.py
+```python
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model):
-    eid=models.CharField(max_length=20,help_text="Employee ID")
-    name=models.CharField(max_length=100)
-    salary=models.IntegerField()
-    age=models.IntegerField()
-    email=models.EmailField()
+class football (models.Model):
+    name=models.CharField(max_length=20,help_text="Player ID")
+    role=models.CharField(max_length=100)
+    Jersey_no=models.IntegerField()
+    goals=models.IntegerField()
 
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display=('eid','name','salary','age','email')
+class footballAdmin(admin.ModelAdmin):
+    list_display=('Jersey_no','name','goals','role')
+
 ```
 
 
-
 ## OUTPUT
-
-![WEB_EX02](https://github.com/Shakthikumar22009242/ORM/assets/120207509/918dcd35-a730-4798-88e6-2d0c88190c82)
-
+![Screenshot (262)](https://github.com/Shakthikumar22009242/ORM/assets/120207509/f949fff8-4ada-46d5-994b-9a5d02ee7aaf)
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
